@@ -5,23 +5,35 @@
 - mi avvicino al tavolo
 - mi siedo sulla sedia 
     - sposto la sedia 
-
 # start loop 
-    - apro una busta 
-        - prendo le carte in mano 
-        - le controllo
-            - SE figurina = rotta/dannegiata 
-                - aggiungi a scarti 
-            
-            - ALTRIMENTI figurina = integra tieni
-                - SE carta nuova aggiungi a ALBUM principale 
+    -finchè ho buste 
+        - apro una busta 
+            - prendo le carte in mano 
+            - le controllo
+                - SE figurina = rotta/dannegiata 
+                    - aggiungi a scarti 
+                
+                - ALTRIMENTI {
+                    
+                    tieni
+                    
+                    - SE carta nuova aggiungi a "Album principale" 
 
-                - ALTRIMENTI carta = doppiona aggiungi ALBUM scambi 
-                    SE carta in album 2 = >= 2 scambia con amico 
-                    ALTRIMENTI tieni 
-    - riciclo busta         
+                    - ALTRIMENTI // carta = doppiona 
+                        aggiungi ALBUM scambi
+
+                        - SE carta in album scambi >= 2
+                            scambia con amico 
+
+                        - ALTRIMENTI 
+                            tieni 
+
+                    }
+
+        - riciclo busta    
 
 # end loop 
+
 
 
 # start loop 
@@ -54,5 +66,5 @@
                 -aggiungi ad album 
                     -SE doppiona aggiungi a "scambi con amici"
                 -compra ancora 
-
+-ricicla busta 
 # end loop 
